@@ -21,7 +21,7 @@ jobs:
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key
           chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ec2-user@your-server-ip "
+          ssh -o StrictHostKeyChecking=no -i private_key ec2-user@52.203.219.121 "
             docker pull your-dockerhub-username/yii2-app:latest &&
             docker service update --image vsarath732/yii2-app:latest yii2-app-service
           "
